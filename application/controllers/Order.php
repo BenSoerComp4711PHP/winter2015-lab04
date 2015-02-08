@@ -84,8 +84,14 @@ class Order extends Application {
 
         $this->data['total'] = $order->total;
         $this->data['items'] = $this->orders->details($order_num);
-        $this->data['okornot'] = $this->orders->validate($order_num);
 
+        if($this->orders->validate($order_num)){
+            $this->data['okornot'] = "";
+            $this->data['okornothref'] = "/order/proceed/" . $order_num;
+        }else{
+            $this->data['okornot'] = "disabled";
+            $this->data['okornothref'] = "#";
+        }
 
         $this->render();
     }

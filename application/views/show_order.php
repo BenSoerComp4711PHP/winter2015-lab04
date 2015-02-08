@@ -9,7 +9,7 @@
 </div>
 {/items}
 <div class="row">
-    <a href="/order/proceed/{order_num}" class="btn btn-large btn-success {okornot}">Proceed</a>
+    <a href="{okornothref}" class="btn btn-large btn-success {okornot}">Proceed</a>
     <a href="/order/display_menu/{order_num}" class="btn btn-large btn-primary">Keep shopping</a>
     <a href="/order/cancel/{order_num}" class="btn btn-large btn-danger">Forget about it</a>
 </div>
